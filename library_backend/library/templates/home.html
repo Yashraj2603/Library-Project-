@@ -1,0 +1,21 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Library</h1>
+    <h2>Books Available:</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book }}</li>
+        {% endfor %}
+    </ul>
+    {% if user_type == 'admin' %}
+    <a href="{% url 'add_book' %}">Add Book</a>
+    {% endif %}
+</body>
+</html>
